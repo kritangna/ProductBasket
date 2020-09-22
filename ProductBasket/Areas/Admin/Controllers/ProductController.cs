@@ -35,6 +35,16 @@ namespace ProductBasket.Areas.Admin.Controllers
             }
             return View(product);
         }
+
+        #region API CALLS
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var allObj = _unitOfWork.Product.GetAll();
+            return Json(new { data = allObj });
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(Product product)
@@ -44,7 +54,7 @@ namespace ProductBasket.Areas.Admin.Controllers
                 if (product.Id == 0)
                 {
                     _unitOfWork.Product.Add(product);
-                   
+
                 }
                 else
                 {
@@ -55,12 +65,18 @@ namespace ProductBasket.Areas.Admin.Controllers
             }
             return View(product);
         }
-        #region API CALLS
-        [HttpGet]
-        public IActionResult GetAll()
+        
+        [HttpDelete]
+        public IActionResult Delete(int id)
         {
-            var allObj = _unitOfWork.Product.GetAll();
-            return Json(new { data = allObj });
+            var objFromDb = _unitOfWork.Product.Get(id);
+            if (objFromDb == null)
+            {
+                return Json(new { success = false, message = "Error while deleting" });
+            }
+            _unitOfWork.Product.Remove(objFromDb);
+            _unitOfWork.Save();
+            return Json(new { success = true, message = "Deleted successfully" });
         }
         #endregion
     }

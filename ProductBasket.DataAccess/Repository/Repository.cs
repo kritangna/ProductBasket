@@ -13,6 +13,11 @@ namespace ProductBasket.DataAccess.Repository
     {
         private readonly ApplicationDbContext _db;
         internal DbSet<T> dbSet;
+        public Repository()
+        {
+
+        }
+        
         public Repository(ApplicationDbContext db)
         {
             _db = db;
@@ -23,12 +28,12 @@ namespace ProductBasket.DataAccess.Repository
             _db.Add(entity);
         }
 
-        public String Get()
+        public virtual String GetStr(int id)
         {
-            return "shivani"
+            return "shivani";
         }
 
-        public T Get(int id)
+        public virtual T Get(int id)
         {
             return dbSet.Find(id);
         }

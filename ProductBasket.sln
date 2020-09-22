@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductBasket", "ProductBasket\ProductBasket.csproj", "{CA77C811-A6F6-4833-8C7A-71B03B61BA9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductBasket", "ProductBasket\ProductBasket.csproj", "{CA77C811-A6F6-4833-8C7A-71B03B61BA9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductBasket.DataAccess", "ProductBasket.DataAccess\ProductBasket.DataAccess.csproj", "{D0182A56-7D0C-4BD0-B29B-803F588E536F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductBasket.DataAccess", "ProductBasket.DataAccess\ProductBasket.DataAccess.csproj", "{D0182A56-7D0C-4BD0-B29B-803F588E536F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductBasket.Models", "ProductBasket.Models\ProductBasket.Models.csproj", "{13BF0A9C-1A8E-4701-8B7F-B6BD13A013D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductBasket.Models", "ProductBasket.Models\ProductBasket.Models.csproj", "{13BF0A9C-1A8E-4701-8B7F-B6BD13A013D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductBasket.Utility", "ProductBasket.Utility\ProductBasket.Utility.csproj", "{85469403-28D7-475E-BB0C-9D240484BEE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductBasket.Utility", "ProductBasket.Utility\ProductBasket.Utility.csproj", "{85469403-28D7-475E-BB0C-9D240484BEE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductBasket.Tests", "ProductBasket.Tests\ProductBasket.Tests.csproj", "{5C525AED-F758-4CED-8586-BFCB9D0D9E26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductBasket.Tests", "ProductBasket.Tests\ProductBasket.Tests.csproj", "{5C525AED-F758-4CED-8586-BFCB9D0D9E26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

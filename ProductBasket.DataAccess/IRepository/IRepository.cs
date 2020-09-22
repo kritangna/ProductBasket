@@ -9,6 +9,7 @@ namespace ProductBasket.DataAccess.IRepository
 {
     public interface IRepository<T> where T:class
     {
+        
         T Get(int id);
         String GetStr(int id);
         IEnumerable<T> GetAll(
