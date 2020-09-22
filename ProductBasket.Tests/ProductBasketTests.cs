@@ -17,7 +17,7 @@ namespace ProductBasket.Tests
             var product = new Product() { Id = 1, ProdName = "Abc", ProdImageName = "Abc.jpg",ProdPrice=250 };
             var mockRepo = new Mock<IRepository<Repository<Product>>>();
 
-            //mockRepo.Setup(x => x.Add(product)).Returns(null);
+            mockRepo.Setup(x => x.Add(product)).Returns(null);
             mockRepo.Setup(x => x.Get(1)).Returns(product);
             //var data = new ProductRepository(mockRepo.Object);
         }

@@ -23,6 +23,11 @@ namespace ProductBasket.DataAccess.Repository
             _db.Add(entity);
         }
 
+        public String Get()
+        {
+            return "shivani"
+        }
+
         public T Get(int id)
         {
             return dbSet.Find(id);
