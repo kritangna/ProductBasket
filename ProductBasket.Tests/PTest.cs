@@ -24,15 +24,6 @@ namespace ProductBasket.Tests
         public void TestSetup()
         {
 
-            // var product = new Product() { Id = 1, ProdName = "Abc", ProdImageName = "Abc.jpg", ProdPrice = 250 };
-            // var mockRepo = new Mock<Repository<Product>>();
-            // mockRepo.Setup(x => x.Add(product));
-            //// mockRepo.Setup(x => x.GetStr()).Returns("shivani");
-            // var prodRepo = new RepoTest(mockRepo.Object);
-            // // var data = new Repository<Product>(mockRepo.Object);
-            // var result = prodRepo.CallGetStr(mockRepo.Object);
-            // //Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(result, "shivani");
-            // Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(result, "Nikita");
 
         }
         [Test]
@@ -44,17 +35,9 @@ namespace ProductBasket.Tests
 
             //Arrange
             var product = new Product() { Id = 2, ProdName = "Abc", ProdImageName = "Abc.jpg", ProdPrice = 250 };
-            //var str= newObj.GetStr(1);
-
-            //var mockRepo = new Mock<IRepository<Repository<Product>>>();
-            //var mockRepo = new Mock<Repository<Product>>();  //nsubstitue
-            //  mockRepo.Setup(x => x.Add(product));
-            //mockRepo.Setup(x => x.GetStr(It.IsAny<int>())).Returns("shivani");
-            //mockRepo.Setup(x => x.Get(It.IsAny<int>())).Returns(product);
-            // mockRepo.Setup(x => x.Add(It.IsAny<Product>())).Verifiable();
-            //mockRepo.VerifyAll();
-            //mockRepo.Setup(x => x.GetStr(It.IsAny<Func<void>>()).Returns("Shivani");
             var prodRepo = new Repository<Product>(appdbcon);
+
+
 
             //Act
             prodRepo.Add(product);
@@ -62,9 +45,9 @@ namespace ProductBasket.Tests
             //Assert
             var result = await appdbcon.Products.FirstOrDefaultAsync();
             Assert.AreEqual(result.ProdName, product.ProdName);
-            //Microsoft.VisualStudio.TestTools.UnitTesting.Assert.AreEqual(str, "shivani");
+            
             Assert.AreSame(product, result);
-            //mockRepo.SetupProperty(x=>x.)
+            
         }
 
         [Test]
@@ -86,8 +69,19 @@ namespace ProductBasket.Tests
             var result = prodRepo.Get(product.Id);
 
             //Assert
-            //var result = await appdbcon.Products.FirstAsync();
+            
             Assert.IsNotNull(result.Id);
+
+            //Some tried things
+            //var str= newObj.GetStr(1);
+            //var mockRepo = new Mock<IRepository<Repository<Product>>>();
+            //var mockRepo = new Mock<Repository<Product>>();  //nsubstitue
+            //  mockRepo.Setup(x => x.Add(product));
+            //mockRepo.Setup(x => x.GetStr(It.IsAny<int>())).Returns("shivani");
+            //mockRepo.Setup(x => x.Get(It.IsAny<int>())).Returns(product);
+            // mockRepo.Setup(x => x.Add(It.IsAny<Product>())).Verifiable();
+            //mockRepo.VerifyAll();
+            //mockRepo.Setup(x => x.GetStr(It.IsAny<Func<void>>()).Returns("Shivani");
 
         }
         [Test]
