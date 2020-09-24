@@ -21,19 +21,21 @@ namespace ProductBasket.DataAccess.Repository
         public Repository(ApplicationDbContext db)
         {
             _db = db;
-            this.dbSet = _db.Set<T>();
+            dbSet = _db.Set<T>();
+            
         }
         public void Add(T entity)
         {
-            _db.Add(entity);
+            dbSet.Add(entity);
+            _db.SaveChanges();
         }
 
-        public virtual String GetStr(int id)
+        public String GetStr(int id)
         {
             return "shivani";
         }
 
-        public virtual T Get(int id)
+        public T Get(int id)
         {
             return dbSet.Find(id);
         }
@@ -80,10 +82,13 @@ namespace ProductBasket.DataAccess.Repository
             return query.FirstOrDefault();
         }
 
+       
+
         public void Remove(int id)
         {
             T entity = dbSet.Find(id);
             Remove(entity);
+            _db.SaveChanges();
         }
 
         public void Remove(T entity)
